@@ -1,0 +1,22 @@
+<h1>Register:</h1>
+<% if false %>
+  <form action=<%= users_path%> method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <label for="user_username">Name:</label>
+    <input type="text" name="user[username]" id="user_username">
+    <label for="user_email">Email:</label>
+    <input type="text" name="user[email]" id="user_email">
+    <label for="user_password">Password:</label>
+    <input type="password" name="user[password]" id="user_password">
+    <input type="submit" value="Register">
+  </form>
+<% end %>
+<%= form_tag(users_path) do %>
+  <%= label_tag(:username, "Username:") %>
+  <%= text_field_tag(:username) %>
+  <%= label_tag :email, "Email:" %>
+  <%= text_field_tag :email %>
+  <%= label_tag :password, "Password:" %>
+  <%= password_field_tag :password %>
+  <%= submit_tag "Register" %>
+<% end %>
