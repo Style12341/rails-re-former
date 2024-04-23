@@ -5,5 +5,5 @@
   <%= form.text_field :email , placeholder: "example@example.com"%>
   <%= form.label :password, "Password:" %>
   <%= form.password_field :password %>
-  <%= form.submit "Register" %>
+  <%= form.submit @user.persisted? ? "Edit" : "Register" %>
 <% end %>
